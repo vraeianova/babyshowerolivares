@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>You're Invited! Baby Shower</title>
+    <meta name="description" content="Saturday, May 23, 2026 · 10:00 AM – 2:00 PM · Sky Lounge, 10 Westedge, Charleston SC" />
+
+    <!-- Open Graph / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="You're Invited! Baby Shower" />
+    <meta property="og:description" content="Saturday, May 23, 2026 · 10:00 AM – 2:00 PM · Sky Lounge, 10 Westedge, Charleston SC" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="ambient ambient-left" aria-hidden="true"></div>
+      <div class="ambient ambient-right" aria-hidden="true"></div>
+
+      <section class="intro-screen" id="intro-screen" aria-label="Apertura de invitación">
+        <div class="intro-copy">
+          <h1>Baby Shower</h1>
+          <p class="intro-text">Olivares Montalván</p>
+        </div>
+
+        <div
+          class="envelope-scene"
+          id="open-invitation"
+          role="button"
+          tabindex="0"
+          aria-label="Abrir sobre"
+          aria-expanded="false"
+        >
+          <span class="scene-glow" aria-hidden="true"></span>
+          <span class="envelope" aria-hidden="true">
+            <span class="envelope-back"></span>
+
+            <span class="invitation-card" aria-hidden="true">
+              <span class="invitation-card__frame">
+                <span class="invitation-card__line">baby shower</span>
+                <strong class="invitation-card__title">Bebé</strong>
+                <span class="invitation-card__date">Próximamente</span>
+
+                <button class="read-invitation" id="read-invitation" type="button">
+                  <span>Leer invitación</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+                  </svg>
+                </button>
+              </span>
+            </span>
+
+            <span class="envelope-liner"></span>
+            <span class="envelope-flap"></span>
+            <span class="envelope-front"></span>
+            <img class="envelope-flower" src="images/big-purple-flower-isolated-white-background.png" alt="Open invitation" />
+          </span>
+        </div>
+
+        <p class="tap-hint" id="tap-hint">Toca para abrir</p>
+      </section>
+
+      <main class="landing" id="main-content">
+        <header class="hero section">
+          <div class="hero-copy">
+            <h2>
+              We can't wait to welcome
+              <span id="baby-name">our little one</span>
+            </h2>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="https://maps.google.com/?q=10+Westedge+St+Charleston+SC+29403" target="_blank" rel="noreferrer">
+                View Location
+              </a>
+              <a class="button button-secondary" href="#rsvp">RSVP</a>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-card hero-card--plaid"></div>
+            <div class="hero-card hero-card--photo">
+              <img src="images/1.webp" alt="Foto principal" />
+            </div>
+          </div>
+        </header>
+
+        <section class="message section">
+          <div class="section-heading">
+            <h3>A sweet anticipation fills our hearts with joy</h3>
+          </div>
+          <p class="message-copy">
+            We'd love for you to join us in celebrating this special milestone, surrounded by smiles, beautiful details, and an excitement that grows with each passing day.
+          </p>
+        </section>
+
+        <section class="details-grid section">
+          <article class="detail-card">
+            <h3>Event Details</h3>
+            <dl class="detail-list">
+              <div>
+                <dt>Date</dt>
+                <dd>Saturday, May 23, 2026</dd>
+              </div>
+              <div>
+                <dt>Time</dt>
+                <dd>10:00 AM – 2:00 PM</dd>
+              </div>
+              <div>
+                <dt>Venue</dt>
+                <dd>Sky Lounge · 10 Westedge St, Charleston, SC 29403</dd>
+              </div>
+            </dl>
+          </article>
+
+          <article class="detail-card countdown-card">
+            <h3>Almost there!</h3>
+            <div class="countdown" aria-live="polite">
+              <div class="countdown-item">
+                <span id="days">00</span>
+                <small>days</small>
+              </div>
+              <div class="countdown-item">
+                <span id="hours">00</span>
+                <small>hours</small>
+              </div>
+              <div class="countdown-item">
+                <span id="minutes">00</span>
+                <small>min</small>
+              </div>
+              <div class="countdown-item">
+                <span id="seconds">00</span>
+                <small>sec</small>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="dresscode section">
+          <div class="section-heading">
+            <h3>Dress Code</h3>
+          </div>
+          <div class="color-palette">
+            <span class="color-dot" style="background-color: #FDF8F4;" aria-label="Cream"></span>
+            <span class="color-dot" style="background-color: #F8D4A8;" aria-label="Peach"></span>
+            <span class="color-dot" style="background-color: #D4B4D8;" aria-label="Lavender"></span>
+            <span class="color-dot" style="background-color: #9B6B82;" aria-label="Mauve"></span>
+          </div>
+        </section>
+
+        <section class="editorial section">
+          <div class="editorial-visual">
+            <figure class="editorial-image editorial-image--large">
+              <img src="images/2.webp" alt="Foto editorial" />
+            </figure>
+            <div class="editorial-texture" aria-hidden="true"></div>
+          </div>
+          <div class="editorial-copy">
+            <p>
+              Every heartbeat reminds us of life's magic and the joy of what's yet to come. With hearts full of love, the parents-to-be dream of first hugs, laughter, and unforgettable moments.
+            </p>
+            <p>
+              This little one is already the beginning of a beautiful story — a story where each day brings new wonder and an infinite love that will be there from the very first moment.
+            </p>
+          </div>
+        </section>
+
+        <section class="gallery section">
+          <div class="section-heading">
+            <h3>Our Story</h3>
+          </div>
+          <div class="gallery-grid">
+            <div class="gallery-item"><img src="images/3.webp" alt="Galería 1" loading="lazy" /></div>
+            <div class="gallery-item"><img src="images/4.webp" alt="Galería 2" loading="lazy" /></div>
+          </div>
+        </section>
+
+        <section class="rsvp section" id="rsvp">
+          <div class="section-heading">
+            <h3>RSVP</h3>
+          </div>
+          <p class="rsvp-copy">
+            Please let us know you're coming by <span>May 16, 2026</span>.
+          </p>
+          <p class="gift-note">
+            If you'd like to give a gift,<br>
+            a cash contribution would be greatly appreciated.
+          </p>
+          <div class="rsvp-actions">
+            <a class="button button-primary" href="#" target="_blank" rel="noreferrer">
+              Confirm via WhatsApp
+            </a>
+          </div>
+        </section>
+
+        <footer class="footer section">
+          <p>With love, the Olivares Montalván family</p>
+          <span>Thank you for sharing in this long-awaited moment with us.</span>
+        </footer>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
