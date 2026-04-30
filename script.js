@@ -1,3 +1,56 @@
+// Direction each flower flies when tapped (matches data-idx order in HTML)
+const FLOWER_FLY = [
+  { x: "80vw",   y: "-120vh", spin: "210deg"  },  // 0 center        → top-right
+  { x: "110vw",  y: "-70vh",  spin: "190deg"  },  // 1 top-right      → right-up
+  { x: "-110vw", y: "90vh",   spin: "-200deg" },  // 2 bottom-left    → bottom-left
+  { x: "-90vw",  y: "-110vh", spin: "-210deg" },  // 3 top-left       → top-left
+  { x: "120vw",  y: "40vh",   spin: "230deg"  },  // 4 right-middle   → right
+  { x: "100vw",  y: "110vh",  spin: "200deg"  },  // 5 bottom-right   → bottom-right
+  { x: "10vw",   y: "-130vh", spin: "-170deg" },  // 6 top-center     → straight up
+  { x: "-120vw", y: "10vh",   spin: "-230deg" },  // 7 left-middle    → left
+  { x: "-20vw",  y: "130vh",  spin: "170deg"  },  // 8 bottom-center  → straight down
+];
+
+function initFlowerLayer() {
+  const layer = document.getElementById("flower-layer");
+  if (!layer) return;
+
+  const flowers = Array.from(layer.querySelectorAll(".flower"));
+  const hint = document.getElementById("flower-hint");
+  let remaining = flowers.length;
+
+  flowers.forEach((flower) => {
+    const idx = parseInt(flower.dataset.idx, 10);
+    const dir = FLOWER_FLY[idx];
+
+    function brushAway(e) {
+      e.stopPropagation();
+      if (flower.classList.contains("is-gone")) return;
+
+      flower.style.setProperty("--fly-x", dir.x);
+      flower.style.setProperty("--fly-y", dir.y);
+      flower.style.setProperty("--fly-spin", dir.spin);
+      flower.classList.add("is-gone");
+
+      remaining--;
+
+      if (remaining === 3 && hint) {
+        hint.textContent = "Almost there!";
+      }
+
+      if (remaining === 0) {
+        window.setTimeout(() => {
+          layer.classList.add("is-clearing");
+          window.setTimeout(() => layer.remove(), 900);
+        }, 250);
+      }
+    }
+
+    flower.addEventListener("click", brushAway);
+    flower.addEventListener("touchstart", brushAway, { passive: true });
+  });
+}
+
 const elements = {
   openButton: document.getElementById("open-invitation"),
   introScreen: document.getElementById("intro-screen"),
@@ -95,6 +148,7 @@ function startCountdown() {
 }
 
 function init() {
+  initFlowerLayer();
   bindEvents();
   startCountdown();
 }
