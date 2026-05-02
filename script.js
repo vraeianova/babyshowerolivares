@@ -22,6 +22,21 @@ function initFlowerLayer() {
   flowers.forEach((flower) => {
     const idx = parseInt(flower.dataset.idx, 10);
     const dir = FLOWER_FLY[idx];
+    const img = flower.querySelector("img");
+
+    flower.style.pointerEvents = "none";
+    flower.style.cursor = "default";
+
+    function enable() {
+      flower.style.pointerEvents = "";
+      flower.style.cursor = "pointer";
+    }
+
+    if (img.complete) {
+      enable();
+    } else {
+      img.addEventListener("load", enable, { once: true });
+    }
 
     function brushAway(e) {
       e.stopPropagation();
@@ -45,7 +60,7 @@ function initFlowerLayer() {
 
     flower.addEventListener("click", brushAway);
     flower.addEventListener("touchstart", (e) => {
-      e.preventDefault(); // blocks the ghost click that would hit the envelope below
+      e.preventDefault();
       brushAway(e);
     }, { passive: false });
   });
