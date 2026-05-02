@@ -679,6 +679,15 @@ body.show-read-button .read-invitation {
   color: var(--muted);
 }
 
+.dresscode-hint {
+  margin: 0.9rem 0 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
 .color-palette {
   display: flex;
   justify-content: center;
