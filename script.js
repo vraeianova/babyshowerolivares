@@ -34,12 +34,9 @@ function initFlowerLayer() {
 
       remaining--;
 
-      if (remaining === 3 && hint) {
-        hint.textContent = "Almost there!";
-      }
-
       if (remaining === 0) {
         window.setTimeout(() => {
+          window.scrollTo(0, 0);
           layer.classList.add("is-clearing");
           window.setTimeout(() => layer.remove(), 900);
         }, 250);
@@ -47,7 +44,10 @@ function initFlowerLayer() {
     }
 
     flower.addEventListener("click", brushAway);
-    flower.addEventListener("touchstart", brushAway, { passive: true });
+    flower.addEventListener("touchstart", (e) => {
+      e.preventDefault(); // blocks the ghost click that would hit the envelope below
+      brushAway(e);
+    }, { passive: false });
   });
 }
 
