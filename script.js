@@ -70,7 +70,7 @@ function pad(value) {
 }
 
 function updateCountdown() {
-  const targetDate = new Date("2026-05-23T10:00:00-04:00");
+  const targetDate = new Date("2026-05-20T10:00:00-04:00");
   const now = new Date();
   const difference = targetDate - now;
 
